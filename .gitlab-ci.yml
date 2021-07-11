@@ -1,7 +1,7 @@
 variables:
-  DOCKER_REGISTRY: public.ecr.aws/m6v0m9n2/logan-test-repo
-  AWS_DEFAULT_REGION: us-east-1 
-  APP_NAME: flask_app
+  DOCKER_REGISTRY: 264617996336.dkr.ecr.eu-west-2.amazonaws.com
+  AWS_DEFAULT_REGION: eu-west-2
+  APP_NAME: flask-app
   DOCKER_HOST: tcp://docker:2375
 
 publish:
