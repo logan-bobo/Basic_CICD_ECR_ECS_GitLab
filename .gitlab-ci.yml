@@ -1,0 +1,21 @@
+variables:
+  DOCKER_REGISTRY: public.ecr.aws/m6v0m9n2/logan-test-repo
+  AWS_DEFAULT_REGION: us-east-1 
+  APP_NAME: flask_app
+  DOCKER_HOST: tcp://docker:2375
+
+publish:
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""] 
+  services:
+    - docker:dind
+  before_script:
+    - amazon-linux-extras install docker
+    - aws --version
+    - docker --version
+  script:
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME:$CI_JOB_ID .
+    - aws ecr get-login-password | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    - docker push $DOCKER_REGISTRY/$APP_NAME:$CI_JOB_ID
+
