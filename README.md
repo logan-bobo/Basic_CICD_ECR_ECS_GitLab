@@ -1,4 +1,4 @@
-# Basic_CICD_ERC_ECS_GitLab
+# Basic_CICD_ECR_ECS_GitLab
 A CICD process for a python-flask application using Docekr,GitLab, AWS-ECR and AWS-ECS
 
 ![CI](https://user-images.githubusercontent.com/51960546/125193284-91b24e00-e243-11eb-9c89-200328a0e7e4.png)
